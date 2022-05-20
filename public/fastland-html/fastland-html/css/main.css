@@ -94,6 +94,7 @@ body {
   --border-color-4:      rgba(181, 181, 181, 0.2);
   --border-color-5:     rgba(38, 39, 41, 0.3);
   --border-color-6:     rgba(130, 130, 136, 0.3);
+  --bg-orangeribbon:                  #f4511e;
 }
 
 p {
@@ -11126,7 +11127,7 @@ ________________________________ */
 
 @media (min-width: 768px) {
   .widget--feature {
-    width: 194px;
+    width: 244px;
     height: 60px;
     margin-bottom: 55px !important;
   }
@@ -16778,6 +16779,7 @@ mark[data-aos="highlight-text"].aos-animate {
 
 .lower-welcome {
   background: #E74923;
+  background-color: var(--bg-orangeribbon);
   padding: 50px;
 }
 
@@ -16837,4 +16839,8 @@ mark[data-aos="highlight-text"].aos-animate {
 .portfolio-box span .small {
   font-size: 18px;
   display: inline;
+}
+
+.bg-orange-color {
+  background-color: var(--bg-orangeribbon);
 }
