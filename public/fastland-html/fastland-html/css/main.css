@@ -98,7 +98,7 @@ body {
 }
 
 p {
-  color: var(--color-texts);
+  color: var(--color-texts-2);
 }
 
 .default-logo, .default-shape {
@@ -8024,11 +8024,13 @@ ________________________________ */
 }
 
 .widget--service .widget__heading {
-  font-size: 21px;
-  font-weight: 500;
-  letter-spacing: normal;
-  line-height: 34px;
-  margin-bottom: 16px;
+      font-size: 45px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 34px;
+    margin-bottom: 16px;
+    color: black;
+    color: var(--bg-orangeribbon);
 }
 
 .widget--service .widget__description {
@@ -10552,7 +10554,7 @@ ________________________________ */
 
 @media (min-width: 992px) {
   .service-items {
-    margin-top: 143px;
+    margin-top: 70px;
   }
 }
 
@@ -11026,8 +11028,8 @@ ________________________________ */
 
 @media (min-width: 992px) {
   .feature-section {
-    padding-top: 125px;
-    padding-bottom: 105px;
+    padding-top: 105px;
+    padding-bottom: 45px;
   }
 }
 
@@ -11400,8 +11402,8 @@ ________________________________ */
 
 @media (min-width: 992px) {
   .content-section--l1-1 {
-    padding-top: 195px;
-    padding-bottom: 214px;
+    padding-top: 105px;
+    padding-bottom: 64px;
   }
 }
 
@@ -14034,7 +14036,7 @@ ________________________________ */
 @media (min-width: 992px) {
   .portfolio-area--l9 {
     padding-top: 65px;
-    padding-bottom: 230px;
+    padding-bottom: 60px;
   }
 }
 
@@ -14519,8 +14521,8 @@ ________________________________ */
 @media (min-width: 1200px) {
   .about-us-area--l9 .about-us-content-box {
     padding-left: 110px;
-    padding-top: 145px;
-    padding-bottom: 145px;
+    padding-top: 75px;
+    padding-bottom: 75px;
     padding-right: 90px;
   }
 }
@@ -15687,12 +15689,12 @@ ________________________________ */
 }
 
 .blogs-post .hover-content__title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: normal;
   line-height: 25px;
   color: #fff;
-  margin-bottom: 19px;
+  margin-bottom: 10px;
   display: block;
   transition: 0.4s;
 }
@@ -15793,6 +15795,7 @@ ________________________________ */
   padding-left: 0;
   background-color: rgba(0,0,0,0.6);
   padding-top: 10px;
+  padding-bottom: 0;
 }
 
 .news-area .hover-content__title {
@@ -15804,6 +15807,11 @@ ________________________________ */
   color: var(--bg-orangeribbon);
 }
 
+.news-area .hover-content .list-unstyled {
+  padding: 0 10px;
+  margin-bottom: 5px;
+}
+
 @media (min-width: 768px) {
   .blog-area--l9 {
     padding-top: 60px;
@@ -15813,8 +15821,8 @@ ________________________________ */
 
 @media (min-width: 992px) {
   .blog-area--l9 {
-    padding-top: 115px;
-    padding-bottom: 225px;
+    padding-top: 45px;
+    padding-bottom: 65px;
   }
 }
 
@@ -16808,6 +16816,7 @@ mark[data-aos="highlight-text"].aos-animate {
   font-weight: normal;
   color: #fff;
   text-align: center;
+      font-size: 28px;
 }
 
 .lower-welcome a {
@@ -16864,4 +16873,17 @@ mark[data-aos="highlight-text"].aos-animate {
 
 .bg-orange-color {
   background-color: var(--bg-orangeribbon);
+}
+
+.about-us-area .video-btn i {
+  color: var(--bg-orangeribbon);
+}
+
+.home-video-img {
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cta-section,.footer-area--l1 {
+  background: var(--bg-orangeribbon);  
 }
