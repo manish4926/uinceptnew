@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-//use App\Http\Controllers\MainController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -23,8 +21,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/','MainController@home')->name('home');
-
-
 require __DIR__.'/auth.php';
-require __DIR__.'/admin.php';
