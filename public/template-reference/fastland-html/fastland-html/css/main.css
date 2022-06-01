@@ -16887,3 +16887,21 @@ mark[data-aos="highlight-text"].aos-animate {
 .cta-section,.footer-area--l1 {
   background: var(--bg-orangeribbon);  
 }
+
+
+.company-card {
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 45px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.company-card img {
+  width: 100%;
+}
+
+.company-card .desc {
+  padding: 10px;
+  border-top: solid 2px;
+}
