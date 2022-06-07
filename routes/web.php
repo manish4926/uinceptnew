@@ -24,3 +24,4 @@ Route::get('/dashboard', function () {
 Route::get('/','MainController@home')->name('home');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';

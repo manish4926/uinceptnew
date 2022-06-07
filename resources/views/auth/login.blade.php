@@ -15,6 +15,32 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .authincation-content {
+                background: rgba(0,0,0,0.3);
+                background: rgba(244, 81, 30, 0.5);
+                border-radius: 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label {
+            color: #fff;
+        }
+
+        input[type="email"],input[type="password"]
+        {
+            background: transparent;
+            border: solid 1px #fff;
+            color: #fff;
+        }
+
+        input[type="email"]:hover, input[type="email"]:focus,input[type="password"]:hover, input[type="password"]:focus
+        {
+            background: rgba(0,0,0,0.5);
+            color: #fff;   
+        }
+
+
+
     </style>
 </head>
 
@@ -28,14 +54,18 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="#">
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        @if($errors->any())
+                                            {{ implode('', $errors->all('<div>:message</div>')) }}
+                                        @endif
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
-                                            <input type="email" class="form-control" value="hello@example.com">
+                                            <input type="email" class="form-control" name="email" value="hello@example.com">
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" class="form-control" value="Password">
+                                            <input type="password" class="form-control" name="password" value="Password">
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">

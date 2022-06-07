@@ -7,8 +7,8 @@ use User;
 
 class AdminController extends Controller
 {
-    public function FunctionName(Request $request)
+    public function dashboard(Request $request)
     {
-        // code...
+        return view('admin.dashboard');
     }
 }
