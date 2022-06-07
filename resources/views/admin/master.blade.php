@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Edumin - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <link rel="stylesheet" href="vendor/jqvmap/css/jqvmap.min.css">
-	<link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('admin/vendor/jqvmap/css/jqvmap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('admin/vendor/chartist/css/chartist.min.css') }}">
 	<!-- Summernote -->
-    <link href="vendor/summernote/summernote.css" rel="stylesheet">
-	<link rel="stylesheet" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skin-3.css">
+    <link href="{{ asset('admin/vendor/summernote/summernote.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
+    <link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/skin-3.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/parsley.css') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    @stack('course-css')
+    @stack('topscripts')
 
 </head>
 
@@ -50,9 +51,9 @@
         ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="images/logo-white-3.png" alt="">
-                <img class="logo-compact" src="images/logo-text-white.png" alt="">
-                <img class="brand-title" src="images/logo-text-white.png" alt="">
+                <img class="logo-abbr" src="{{ asset('admin/images/logo-white-3.png') }}" alt="">
+                <img class="logo-compact" src="{{ asset('admin/images/logo-text-white.png') }}" alt="">
+                <img class="brand-title" src="{{ asset('admin/images/logo-text-white.png') }}" alt="">
             </a>
 
             <div class="nav-control">
@@ -151,7 +152,7 @@
                             </li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="images/profile/education/pic1.jpg" width="20" alt=""/>
+                                    <img src="{{ asset('admin/images/profile/education/pic1.jpg') }}" width="20" alt=""/>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="app-profile.html" class="dropdown-item ai-icon">
@@ -189,7 +190,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by UINCEPT 2022</p>
+                <p>Copyright © Designed &amp; Developed by MANISH @ UINCEPT 2022</p>
             </div>
         </div>
         <!--**********************************
@@ -214,38 +215,41 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/dlabnav-init.js"></script>	
+    <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
+	<script src="{{ asset('admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('admin/js/custom.min.js') }}"></script>
+    <script src="{{ asset('admin/js/dlabnav-init.js') }}"></script>	
 	
 	<!-- Chart sparkline plugin files -->
-    <script src="vendor/jquery-sparkline/jquery.sparkline.min.js"></script>
-	<script src="js/plugins-init/sparkline-init.js"></script>
+    <script src="{{ asset('admin/vendor/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+	<script src="{{ asset('admin/js/plugins-init/sparkline-init.js') }}"></script>
 	
 	<!-- Chart Morris plugin files -->
-    <script src="vendor/raphael/raphael.min.js"></script>
-    <script src="vendor/morris/morris.min.js"></script> 
+    <script src="{{ asset('admin/vendor/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/morris/morris.min.js') }}"></script> 
 	
     <!-- Init file -->
-    <script src="js/plugins-init/widgets-script-init.js"></script>
+    <script src="{{ asset('admin/js/plugins-init/widgets-script-init.js') }}"></script>
 	
 	<!-- Demo scripts -->
-    <script src="js/dashboard/dashboard.js"></script>
+    <script src="{{ asset('admin/js/dashboard/dashboard.js') }}"></script>
 	
 	<!-- Summernote -->
-    <script src="vendor/summernote/js/summernote.min.js"></script>
+    <script src="{{ asset('admin/vendor/summernote/js/summernote.min.js') }}"></script>
     <!-- Summernote init -->
-    <script src="js/plugins-init/summernote-init.js"></script>
+    <script src="{{ asset('admin/js/plugins-init/summernote-init.js') }}"></script>
+
+    
 	
 	<!-- Svganimation scripts -->
-    <script src="vendor/svganimation/vivus.min.js"></script>
-    <script src="vendor/svganimation/svg.animation.js"></script>
+    <script src="{{ asset('admin/vendor/svganimation/vivus.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/svganimation/svg.animation.js') }}"></script>
     
 
-<script src="{{ asset('js/parsley.min.js') }}"></script>
+    <script src="{{ asset('js/parsley.min.js') }}"></script>
 
-@stack('course-scripts')   
+@stack('bottomscripts')   
+
 @if(Session::has('successMessage'))
 <script type="text/javascript">
   $(document).ready(function () {
