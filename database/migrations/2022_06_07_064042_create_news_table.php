@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('description');
+            $table->string('card_image');
+            $table->string('cover_image');
             $table->string('news_date');
             $table->longText('content');
             $table->longText('extracontent')->nullable();

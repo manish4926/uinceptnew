@@ -42,19 +42,24 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        $news               = new News;
+        $news = new News;
         $news->title        = $request->title;
+        $news->subtitle     = $request->subtitle;
         $news->news_date    = $request->news_date;
+        $news->content      = $request->content;
+        $news->description  = $request->description;
+        $news->card_image   = $request->card_image;
+        $news->cover_image  = $request->cover_image;
         $news->content      = $request->content;
         $news->extracontent = $request->extracontent;
         $news->source_name  = $request->source_name;
         $news->source_link  = $request->source_link;
-        $news->status       = true;
+        $news->status       = $request->status;
         $news->save();
 
         Session::flash('successMessage', 'News Added Successfully');
         //return redirect()->back();
-        return redirect()->route('adminnews');
+        return redirect()->route('adminviewnews');
         
     }
 }

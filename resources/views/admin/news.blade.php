@@ -27,7 +27,7 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Asset List</h4>
+						<h4 class="card-title">View News</h4>
 						<a href="{{ route('adminaddnews') }}" class="btn btn-primary">+ Add new</a>
 					</div>
 					<div class="card-body">
@@ -320,7 +320,7 @@
 
 @push('bottomscripts')
 
-<script src="{{ asset('vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     {{-- <script src="js/plugins-init/datatables.init.js"></script> --}}
 <script type="text/javascript">
 	
