@@ -7,7 +7,7 @@
 		<div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>News</h4>
+                    <h4>Past Event</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -27,8 +27,8 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">View News</h4>
-						<a href="{{ route('adminaddnews') }}" class="btn btn-primary">+ Add new</a>
+						<h4 class="card-title">View Past Event</h4>
+						<a href="{{ route('adminaddpastevent') }}" class="btn btn-primary">+ Add new</a>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -45,13 +45,13 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($newslist as $value)
+									@foreach($eventlist as $value)
 									<tr>
 										<td><strong>{{ $value->id }}</strong></td>
 										<td>{{ $value->title }}</td>
 										<td>{{ $value->subtitle }}</td>
 										<td>{{ $value->description }}</td>
-										<td>{{ $value->news_date }}</td>
+										<td>{{ $value->event_date }}</td>
 										<td>{{ $value->status }}</td>	
 										<td>
                                             <a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>

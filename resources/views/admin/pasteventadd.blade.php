@@ -28,7 +28,7 @@
 		<div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add News</h4>
+                    <h4>Add Past Event</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -48,11 +48,10 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Add News</h4>
-						<a href="{{ route('adminaddnews') }}" class="btn btn-primary">+ Add new</a>
+						<h4 class="card-title">Add Past Event</h4>
 					</div>
 					<div class="card-body">
-                                <form action="{{ route('adminaddnewssubmit') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('adminaddpasteventsubmit') }}" method="post" enctype="multipart/form-data">
                                 	@csrf
 									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-12">
@@ -87,8 +86,8 @@
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">News Date</label>
-												<input class="datepicker-default form-control" name="news_date">
+												<label class="form-label">Event Date</label>
+												<input class="datepicker-default form-control" name="event_date">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
@@ -114,15 +113,8 @@
 												<textarea class="form-control tinymce" rows="5" name="extracontent"></textarea>
 											</div>
 										</div>
-										
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group fallback w-100">
-												<label class="form-label">Card Image (326 * 464)</label>
-												<input type="file" class="dropify" data-default-file="" name="card_image">
-											</div>
-										</div>
 
-										<div class="col-lg-6 col-md-6 col-sm-12">
+										<div class="col-lg-12 col-md-12 col-sm-12">
 											<div class="form-group fallback w-100">
 												<label class="form-label">Cover Image (Width 1200px)</label>
 												<input type="file" class="dropify" data-default-file="" name="cover_image">

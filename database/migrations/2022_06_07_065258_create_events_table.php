@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('description');
-            $table->string('news_date');
+            $table->string('cover_image');
+            $table->string('event_date');
             $table->longText('content');
             $table->longText('extracontent')->nullable();
             $table->string('source_name')->nullable();
