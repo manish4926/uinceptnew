@@ -15,6 +15,7 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('adminviewnews') }}">News</a></li>
                     <li><a href="{{ route('adminviewevent') }}">Events</a></li>
+                    <li><a href="{{ route('adminviewpastevent') }}">Past Events</a></li>
                     
                 </ul>
             </li>

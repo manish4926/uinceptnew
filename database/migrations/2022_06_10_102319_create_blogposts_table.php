@@ -13,19 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('past_events', function (Blueprint $table) {
+        Schema::create('blogposts', function (Blueprint $table) {
             $table->id();
+            $table->integer('author_id')->unsigned()->default(0);
             $table->string('title');
             $table->string('slug');
-            $table->string('subtitle');
-            $table->string('description');
             $table->string('cover_image');
-            $table->string('event_date');
-            $table->longText('content');
-            $table->longText('extracontent')->nullable();
-            $table->string('source_name')->nullable();
-            $table->string('source_link')->nullable();
-            $table->boolean('status');
+            $table->text('short_desc');
+            $table->long('tags');
+            $table->longtext('content');
+            $table->timestamp('posted_at');
             $table->timestamps();
         });
     }
@@ -37,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('past_events');
+        Schema::dropIfExists('blogposts');
     }
 };

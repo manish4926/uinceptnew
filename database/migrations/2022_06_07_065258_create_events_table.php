@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->string('subtitle');
             $table->string('description');
-            $table->string('news_date');
+            $table->string('cover_image');
+            $table->string('event_date');
             $table->longText('content');
             $table->longText('extracontent')->nullable();
             $table->string('source_name')->nullable();
