@@ -97,20 +97,20 @@ class AdminController extends Controller
         $coverfileupload = json_decode(fileUpload($coverfile,'images/event', 'default', $type="Image"), true);
         $coverfilestatus = $coverfileupload['status'];
 
-        $news = new Event;
-        $news->title        = $request->title;
-        $news->slug         = slugs($request->title);
-        $news->subtitle     = $request->subtitle;
-        $news->event_date   = $request->event_date;
-        $news->content      = $request->content;
-        $news->description  = $request->description;
-        $news->cover_image  = $coverfileupload['filename'];
-        $news->content      = $request->content;
-        $news->extracontent = $request->extracontent;
-        $news->source_name  = $request->source_name;
-        $news->source_link  = $request->source_link;
-        $news->status       = $request->status;
-        $news->save();
+        $event = new Event;
+        $event->title        = $request->title;
+        $event->slug         = slugs($request->title);
+        $event->subtitle     = $request->subtitle;
+        $event->event_date   = $request->event_date;
+        $event->content      = $request->content;
+        $event->description  = $request->description;
+        $event->cover_image  = $coverfileupload['filename'];
+        $event->content      = $request->content;
+        $event->extracontent = $request->extracontent;
+        $event->source_name  = $request->source_name;
+        $event->source_link  = $request->source_link;
+        $event->status       = $request->status;
+        $event->save();
 
         Session::flash('successMessage', 'Event Added Successfully');
         //return redirect()->back();
@@ -139,20 +139,20 @@ class AdminController extends Controller
         $coverfileupload = json_decode(fileUpload($coverfile,'images/pastevent', 'default', $type="Image"), true);
         $coverfilestatus = $coverfileupload['status'];
 
-        $news = new PastEvent;
-        $news->title        = $request->title;
-        $news->slug         = slugs($request->title);
-        $news->subtitle     = $request->subtitle;
-        $news->event_date   = $request->event_date;
-        $news->content      = $request->content;
-        $news->description  = $request->description;
-        $news->cover_image  = $coverfileupload['filename'];
-        $news->content      = $request->content;
-        $news->extracontent = $request->extracontent;
-        $news->source_name  = $request->source_name;
-        $news->source_link  = $request->source_link;
-        $news->status       = $request->status;
-        $news->save();
+        $pastevent = new PastEvent;
+        $pastevent->title        = $request->title;
+        $pastevent->slug         = slugs($request->title);
+        $pastevent->subtitle     = $request->subtitle;
+        $pastevent->event_date   = $request->event_date;
+        $pastevent->content      = $request->content;
+        $pastevent->description  = $request->description;
+        $pastevent->cover_image  = $coverfileupload['filename'];
+        $pastevent->content      = $request->content;
+        $pastevent->extracontent = $request->extracontent;
+        $pastevent->source_name  = $request->source_name;
+        $pastevent->source_link  = $request->source_link;
+        $pastevent->status       = $request->status;
+        $pastevent->save();
 
         Session::flash('successMessage', 'Past Event Added Successfully');
         return redirect()->route('adminviewpastevent');
@@ -163,13 +163,13 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $blogposts = BlogPost::orderBy('id','desc')->paginate();
-        return view('admin.pastevent',compact('request','user','blogposts'));
+        return view('admin.blog',compact('request','user','blogposts'));
     }
 
     public function addBlog(Request $request)
     {
         $user = Auth::user();
-        return view('admin.pasteventadd',compact('request','user'));
+        return view('admin.blogadd',compact('request','user'));
     }
 
     public function addBlogSubmit(Request $request)
@@ -177,26 +177,22 @@ class AdminController extends Controller
         $user = Auth::user();
 
         $coverfile = $request->file('cover_image');
-        $coverfileupload = json_decode(fileUpload($coverfile,'images/pastevent', 'default', $type="Image"), true);
+        $coverfileupload = json_decode(fileUpload($coverfile,'images/blogpost', 'default', $type="Image"), true);
         $coverfilestatus = $coverfileupload['status'];
 
-        $news = new BlogPost;
-        $news->title        = $request->title;
-        $news->slug         = slugs($request->title);
-        $news->subtitle     = $request->subtitle;
-        $news->event_date   = $request->event_date;
-        $news->content      = $request->content;
-        $news->description  = $request->description;
-        $news->cover_image  = $coverfileupload['filename'];
-        $news->content      = $request->content;
-        $news->extracontent = $request->extracontent;
-        $news->source_name  = $request->source_name;
-        $news->source_link  = $request->source_link;
-        $news->status       = $request->status;
-        $news->save();
+        $blog = new BlogPost;
+        $blog->title       = $request->title;
+        $blog->slug        = slugs($request->title);
+        $blog->short_desc  = $request->description;
+        $blog->tags        = $request->tags;
+        $blog->cover_image = $coverfileupload['filename'];
+        $blog->content     = $request->content;
+        $blog->posted_at   = $request->posted_at;
+        $blog->status      = $request->status;
+        $blog->save();
 
-        Session::flash('successMessage', 'Past Event Added Successfully');
-        return redirect()->route('adminviewpastevent');
+        Session::flash('successMessage', 'Blog Added Successfully');
+        return redirect()->route('adminviewblog');
         
     }
 }

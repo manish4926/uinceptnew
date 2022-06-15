@@ -2,6 +2,8 @@
 @section('content')
 
 @push('topscripts')
+<link rel="stylesheet" href="{{ asset('admin/vendor/pickadate/themes/default.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/vendor/pickadate/themes/default.date.css') }}">
 <link href="{{ asset('admin/vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" integrity="sha512-In/+MILhf6UMDJU4ZhDL0R0fEpsp4D3Le23m6+ujDWXwl3whwpucJG1PEmI3B07nyJx+875ccs+yX2CqQJUxUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=qwp2vxacyh2n0efsc99k49utcc8wpxa7mhs6xkac3x65jdjh"></script>
@@ -28,7 +30,7 @@
 		<div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add News</h4>
+                    <h4>Add Event</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -87,7 +89,7 @@
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">Event Date</label>
-												<input class="datepicker-default form-control" name="event_date">
+												<input class="datepicker form-control" name="event_date">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">

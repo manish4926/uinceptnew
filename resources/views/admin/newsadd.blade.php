@@ -2,13 +2,11 @@
 @section('content')
 
 @push('topscripts')
-<<<<<<< HEAD
+
 <link rel="stylesheet" href="{{ asset('admin/vendor/pickadate/themes/default.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/vendor/pickadate/themes/default.date.css') }}">
-
-=======
 <link href="{{ asset('admin/vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
->>>>>>> 4a2d72d0bf3682ca0831dd77000f09010bb180c6
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" integrity="sha512-In/+MILhf6UMDJU4ZhDL0R0fEpsp4D3Le23m6+ujDWXwl3whwpucJG1PEmI3B07nyJx+875ccs+yX2CqQJUxUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=qwp2vxacyh2n0efsc99k49utcc8wpxa7mhs6xkac3x65jdjh"></script>
     <script>tinymce.init({ 
@@ -94,7 +92,7 @@
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">News Date</label>
-												<input class="datepicker-default form-control" name="news_date">
+												<input class="datepicker form-control" name="news_date">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
@@ -151,28 +149,19 @@
 
 
 @push('bottomscripts')
-<<<<<<< HEAD
+
 
 <script src="{{ asset('admin/vendor/pickadate/picker.js') }}"></script>
 <script src="{{ asset('admin/vendor/pickadate/picker.date.js') }}"></script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.js" integrity="sha512-hJsxoiLoVRkwHNvA5alz/GVA+eWtVxdQ48iy4sFRQLpDrBPn6BFZeUcW4R4kU+Rj2ljM9wHwekwVtsb0RY/46Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-	$('.dropify').dropify();
-	$('.datepicker-default').pickadate({
-		format: 'yyyy-mm-dd',
-=======
-<script src="{{ asset('admin/vendor/pickadate/picker.js') }}"></script>
-<script src="{{ asset('admin/vendor/pickadate/picker.date.js') }}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.js" integrity="sha512-hJsxoiLoVRkwHNvA5alz/GVA+eWtVxdQ48iy4sFRQLpDrBPn6BFZeUcW4R4kU+Rj2ljM9wHwekwVtsb0RY/46Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 	$('.dropify').dropify();
 	$('.datepicker').pickadate({
-		format: 'yyyy-mm-dd'
->>>>>>> 4a2d72d0bf3682ca0831dd77000f09010bb180c6
+		format: 'yyyy-mm-dd',
 	});
+
 </script>
 
 

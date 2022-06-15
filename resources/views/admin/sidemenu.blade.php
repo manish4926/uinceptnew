@@ -20,7 +20,7 @@
                 </ul>
             </li>
 
-            <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
+            <li><a class="ai-icon" href="{{ route('adminviewblog') }}" aria-expanded="false">
                     <i class="la la-calendar"></i>
                     <span class="nav-text">Blogs</span>
                 </a>

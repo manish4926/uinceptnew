@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('blogposts', function (Blueprint $table) {
             $table->id();
-            $table->integer('author_id')->unsigned()->default(0);
+            $table->integer('author_id')->default(0);
             $table->string('title');
             $table->string('slug');
             $table->string('cover_image');
             $table->text('short_desc');
-            $table->long('tags');
-            $table->longtext('content');
+            $table->text('tags');
+            $table->longText('content');
+            $table->boolean('status');
             $table->timestamp('posted_at');
             $table->timestamps();
         });
