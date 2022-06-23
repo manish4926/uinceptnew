@@ -19,11 +19,41 @@
       paste_as_text: true,
       theme: 'modern',
       paste_data_images: true,
-      plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen link codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools  contextmenu colorpicker textpattern help',
+      plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen link codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount image imagetools  contextmenu colorpicker textpattern help',
 
-      toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat',
+      toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link image code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat',
       //toolbar2: "print preview media | forecolor backcolor emoticons",
+      images_upload_handler: function(blobInfo, success, faliure) {
+        var xhr, formData;
       
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', '{{route('blogimageuploader') }}');
+        xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'));
+      
+        xhr.onload = function() {
+            var json;
+        
+            if (xhr.status != 200) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+        
+            json = JSON.parse(xhr.responseText);
+        
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+        
+            success(json.location);
+        };
+      
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+      
+        xhr.send(formData);
+      }
     });</script>
 
 

@@ -26,4 +26,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function ()
 	Route::get('/blog/edit/{id}','AdminController@editBlog')->name('admineditblog');
 	Route::post('/blog/edit/submit','AdminController@editBlogSubmit')->name('admineditblogsubmit');
 	Route::get('/blog/delete','AdminController@deleteBlogSubmit')->name('admindeleteblog');
+
+	Route::post('/blog/inline/image/upload/submit','UploadController@blogImageUpload')->name('blogimageuploader');
+
+	Route::post('/delete/from/db/submit','UploadController@deleteFromDB')->name('deletefromdb');
 });

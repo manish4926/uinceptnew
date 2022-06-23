@@ -296,6 +296,7 @@ function round2($value) {
 /*Arrays*/
 
 function fileUpload($file,$uplaodpath, $newfilename, $type="Image") {
+
     $errorcode = 0;
     $filefullname = $file->getClientOriginalName();
     $filename     = slugs(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME));
